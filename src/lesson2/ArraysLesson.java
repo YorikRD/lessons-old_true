@@ -1,3 +1,5 @@
+package lesson2;
+
 import java.util.Arrays;
 
 public class ArraysLesson {
@@ -67,9 +69,9 @@ public class ArraysLesson {
         // сортировка массивов
         arr4 = new int[]{2, 67, 123, -304, 0, 13};
         Arrays.sort(arr4); // Arrays.sort(arr4, 1, 5);
-        // быстрая сортировка, сложность - О(n log n)
+        // быстрая сортировка, сложность - О(n log n) // TODO: ПОСМОТРЕТЬ РЕАЛИЗАЦИЮ АЛГОРИТМА
 
-        // бинарный поиск, сложность O(log n)
+        // бинарный поиск, сложность O(log n) // TODO: ПОСМОТРЕТЬ РЕАЛИЗАЦИЮ АЛГОРИТМА
         arr4 = new int[]{3, 5, 6, 7, 10, 34};
         System.out.println(Arrays.binarySearch(arr4, 6));
         System.out.println(Arrays.binarySearch(arr4, 23));
