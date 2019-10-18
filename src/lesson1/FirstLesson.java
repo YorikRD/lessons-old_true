@@ -194,9 +194,9 @@ public class FirstLesson {
 
         }
 
-        /*SWITCH IN Java 13*/
+        /*SWITCH IN Java 12 + 13 */
 
-        int code = 3;
+/*        int code = 3;
         switch (code) {
             case 1  -> System.out.println("user code");
             case 2  -> System.out.println("admin code");
@@ -208,7 +208,6 @@ public class FirstLesson {
             case 2  -> System.out.println("admin code");
             default -> System.out.println("code is not valid");
         }
-
 
         code = 2;
         System.out.println(
@@ -233,13 +232,14 @@ public class FirstLesson {
         String codeRes2 = switch (code) {
             case 1 -> "user code";
             case 2 -> "admin code";
-            default      -> {
+            default -> {
                 String result =  "Code " + code + " is not valid";
-                yield result;
+                yield result; // результат работы switch для J13
+               // break result; // результат работы switch для J12
             }
         };
 
-        System.out.printf("Code Result = %s\n", codeRes2);
+        System.out.printf("Code Result = %s\n", codeRes2);*/
 
 
     }
