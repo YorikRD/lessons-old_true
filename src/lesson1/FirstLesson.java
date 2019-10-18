@@ -1,3 +1,5 @@
+package lesson1;
+
 import java.util.Scanner;
 
 public class FirstLesson {
@@ -191,6 +193,54 @@ public class FirstLesson {
                 break;
 
         }
+
+        /*SWITCH IN Java 13*/
+
+        int code = 3;
+        switch (code) {
+            case 1  -> System.out.println("user code");
+            case 2  -> System.out.println("admin code");
+            default -> System.out.println("code is not valid");
+        }
+
+        switch (code) {
+            case 1, 15, 67 -> System.out.println("user code");
+            case 2  -> System.out.println("admin code");
+            default -> System.out.println("code is not valid");
+        }
+
+
+        code = 2;
+        System.out.println(
+                switch (code) {
+                    case  1 -> "user code";
+                    case  2 -> "admin code";
+                    default -> "code is not valid";
+                }
+        );
+
+
+        code = 1;
+        String codeRes1 = switch (code) {
+            case 1 -> "user code";
+            case 2 -> "admin code";
+            default -> "code is not valid";
+        };
+        System.out.printf("Result = %s\n", codeRes1);
+
+
+        code = 15;
+        String codeRes2 = switch (code) {
+            case 1 -> "user code";
+            case 2 -> "admin code";
+            default      -> {
+                String result =  "Code " + code + " is not valid";
+                yield result;
+            }
+        };
+
+        System.out.printf("Code Result = %s\n", codeRes2);
+
 
     }
 
