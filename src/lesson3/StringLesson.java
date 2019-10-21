@@ -2,7 +2,6 @@ package lesson3;
 
 import java.util.Arrays;
 import java.util.StringJoiner;
-//import java.util.StringJoiner;
 
 public class StringLesson {
     public static void main(String[] args) {
@@ -13,7 +12,7 @@ public class StringLesson {
         * */
 
         /*
-        Начиная с 9 версии - компактные строки
+        Начиная с 9 версии (компактные строки)
         строки хранятся как массив byte[]
         LATIN-1
         UTF-16
@@ -150,17 +149,12 @@ public class StringLesson {
         System.out.println(textBlock);   */
 
 
+        //TODO: задачи на строки
+        /*Даны 2 слова, состоящие из четного числа букв. Получить слово состоящее из первой половины первого слова и второй половины второго слова.*/
 
+        /*Найдите самое длинное слово в предложении, при условии, что в предложении все слова разной длины*/
 
-
-
-
-
-
-
-
-
-
+        /*Имеются две строки. Найти количество вхождений одной строки в другую.*/
 
 
     }
