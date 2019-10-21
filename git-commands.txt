@@ -37,8 +37,26 @@ VCS -> Git -> Pull
 либо Commit & Push - для коммита и отправки изменений
 в удаленный репозиторий
 
-LOCAL CHANGES
-аналогично команде в консоле git push
+На случай конфликта:
+1. VCS -> Git -> Stash
+аналогично команде в консоле git stash
+VCS -> Git -> UnStash (вернуть изменения)
+аналогично команде в консоле git apply stash
+
+2. VCS -> Git -> Reset HEAD
+аналогично команде в консоле git reset --hard HEAD
+
+git add
+git commit
+git pull
+
+разрешаем конфлит
+
+git add
+git commit
+git pull
+
+история колммитов (консоль) git log
 
 
 
