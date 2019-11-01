@@ -35,5 +35,9 @@ public class Main {
         // clone()
         Car newCar = (Car) opel.clone();
 
+        opel.getOwner().setName("New Name");
+        System.out.println(newCar);
+        System.out.println(opel);
+
     }
 }

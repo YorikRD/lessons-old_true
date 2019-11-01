@@ -6,10 +6,21 @@ public class Car implements Cloneable{
     private Owner owner;
 
 
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Owner owner) {
+        this.owner = owner;
+    }
+
     @Override
     public Object clone() throws CloneNotSupportedException {
+        super.clone();
         // реализация
-        return super.clone();
+        Owner o = new Owner(this.owner.getName(), this.owner.getPhone());
+        Car c = new Car(this.brand, this.color, o);
+        return c;
     }
 
     public Car(String brand, String color, Owner owner) {
