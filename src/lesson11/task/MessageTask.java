@@ -33,7 +33,7 @@ public class MessageTask {
 
     public static void removeOther(List<Message> messageList, MessagePriority priority){
         // TODO: удалить из коллекции все сообщения, кроме тех, которые имеют заданный приоритет
-        // вывод в консоль до удаления и после удаления
+        //  вывод в консоль до удаления и после удаления
     }
 
     public static void main(String[] args) {
