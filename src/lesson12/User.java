@@ -1,10 +1,16 @@
-package lesson11.enums;
+package lesson12;
 
 public class User {
     private String login;
     private String pwd;
 
     private Role role;
+
+    public User(String login, String pwd, Role role) {
+        this.login = login;
+        this.pwd = pwd;
+        this.role = role;
+    }
 
     public String getLogin() {
         return login;
@@ -29,5 +35,17 @@ public class User {
     public void setRole(Role role) {
         this.role = role;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "login='" + login + '\'' +
+                ", pwd='" + pwd + '\'' +
+                ", role=" + role +
+                '}';
+    }
 }
 
+enum Role {
+    USER, ADMIN
+}
