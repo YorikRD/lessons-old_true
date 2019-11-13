@@ -87,10 +87,21 @@ public class MapLesson {
 
         List<String> strings = Files.readAllLines(file1.toPath());
         // каждая строка файла - отдельный элемент списка
-//        \\p{Punct} ""
+//        replaceAll(\\p{Punct}, "")
+//        " ere rere rerer"
+        ArrayList<String> arrayList = new ArrayList<>();
+        for (String string: strings) {
+            String[] strings1 = string
+                    .replaceAll("\\p{Punct}", "")
+                    .trim()
+                    .split(" ");
 
+            for (String s: strings1){
+                if (s.length() > 0) {
+                    arrayList.add(s);
+                }
 
-
-
+            }
+        }
     }
 }
