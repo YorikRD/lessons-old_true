@@ -6,12 +6,12 @@ import java.time.LocalDateTime;
 public class Message implements Serializable {
     private String sender;
     private String text;
-    private LocalDateTime date;
+    private LocalDateTime dateTime;
 
-    public Message(String sender, String text) {
+    public Message(String sender, String messageText) {
         this.sender = sender;
-        this.text = text;
-        date = LocalDateTime.now();
+        this.text = messageText;
+        dateTime = LocalDateTime.now();
     }
 
     public String getSender() {
@@ -30,11 +30,12 @@ public class Message implements Serializable {
         this.text = text;
     }
 
-    public LocalDateTime getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDateTime date) {
-        this.date = date;
+    @Override
+    public String toString() {
+        return "Message{" +
+                "sender='" + sender + '\'' +
+                ", text='" + text + '\'' +
+                ", dateTime=" + dateTime +
+                '}';
     }
 }
