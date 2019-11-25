@@ -1,15 +1,13 @@
 package lesson16;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
 
 public class StudentFilter {
     public static void main(String[] args) {
-        // фильтры:
-        // 1. по стране (например, студенты из России)
-        // 2. старше 30
-        // 3. старше 30 и по стране (например, студенты из России)
+
 
         Student student1 = new Student("Tom", 25, "Canada");
         Student student2 = new Student("Tim", 33, "Russia");
@@ -25,6 +23,24 @@ public class StudentFilter {
         students.add(student5);
         University university = new University(students);
 
+        // 1. по стране (например, студенты из России)
+        Predicate<Student> russiaFilter =
+                student -> "Russia".equals(student.getCountry());
+        university.getFilterStudents(russiaFilter);
+        // 2. старше 30
+        Predicate<Student> thirtyFilter = student -> student.getAge() >= 30;
+        university.getFilterStudents(thirtyFilter);
+        // 3. старше 30 и по стране (например, студенты из России)
+        System.out.println(university.getFilterStudents(thirtyFilter.and(russiaFilter)));
+
+
+        Comparator<Student> byName =
+                (std1, std2)-> std1.getName().compareTo(std2.getName());
+        byName = Comparator.comparing(Student::getName);
+        students.sort(byName);
+
+        Comparator<Student> byAge = Comparator.comparing(Student::getAge);
+        students.sort(byAge);
     }
 
 }
@@ -38,7 +54,9 @@ class University{
 
     public List<Student> getFilterStudents(Predicate<Student> filter) {
         List<Student> students = new ArrayList<>();
-
+        for (Student student: studentList){
+            if (filter.test(student)) students.add(student);
+        }
         return students;
     }
 }
