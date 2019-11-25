@@ -5,10 +5,28 @@ import java.util.List;
 import java.util.function.Predicate;
 
 public class StudentFilter {
-    // фильтры:
-    // 1. по стране (например, студенты из России)
-    // 2. старше 30
-    // 3. старше 30 и по стране (например, студенты из России)
+    public static void main(String[] args) {
+        // фильтры:
+        // 1. по стране (например, студенты из России)
+        // 2. старше 30
+        // 3. старше 30 и по стране (например, студенты из России)
+
+        Student student1 = new Student("Tom", 25, "Canada");
+        Student student2 = new Student("Tim", 33, "Russia");
+        Student student3 = new Student("Alex", 19, "China");
+        Student student4 = new Student("Robert", 36, "Russia");
+        Student student5 = new Student("Paul", 30, "China");
+
+        ArrayList<Student> students = new ArrayList<>();
+        students.add(student1);
+        students.add(student2);
+        students.add(student3);
+        students.add(student4);
+        students.add(student5);
+        University university = new University(students);
+
+    }
+
 }
 
 class University{
@@ -25,7 +43,7 @@ class University{
     }
 }
 
-class Student{
+class Student {
     private String name;
     private int age;
     private String country;
