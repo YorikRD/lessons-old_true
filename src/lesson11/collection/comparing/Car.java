@@ -1,3 +1,5 @@
+package lesson11.collection.comparing;
+
 public class Car {
     private String color;
     private String brand;

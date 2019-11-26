@@ -1,3 +1,5 @@
+package lesson11.collection.comparing;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 
@@ -52,6 +54,7 @@ class PriceComparator implements Comparator<Car> {
         return Integer.compare(o1.getPrice(), o2.getPrice());
     }
 }
+
 class ColorComparator implements Comparator<Car> {
     @Override
     public int compare(Car o1, Car o2) {
