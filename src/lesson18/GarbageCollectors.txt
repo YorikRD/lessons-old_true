@@ -1,0 +1,36 @@
+heap (куча) пользовательские объекты
+Заголовок
+Память для примитивных свойств
+Память для ссылочных свойств
+
+System.gc();
+long totalMemory = Runtime.getRuntime().totalMemory();
+long freeMemory = Runtime.getRuntime().freeMemory();
+
+Stop-The-World - остановка выполнения программы во время работы GC
+Eden - молодое поколение
+Survivor - выжившие после сборки мусора объекты
+Tunered - старшее поколение
+
+Сборщики мусора
+Serial GC - последовательный сборщик мусора
+
+Eden - Survivor1 - Survivor2 | Tunered
+
+Parallel GC - параллельный сборщик мусора
+полезен для машин с несколькоми процессорами
+Для машин с N процессорами создает
+N потоков для N < 8
+целую часть от 5N/8 для N >= 8
+
+Tunered | Eden - Survivor1 - Survivor2
+Увеличивает размеры областей на 20%, уменьшает на 5%
+Можно регулировать.
+
+G1 (Garbage First) GC java 9
+
+Eden | Survivor | Tunered
+
+Параллельный G1 GC java 10
+
+Eden | Survivor | Tunered
