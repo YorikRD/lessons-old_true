@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -26,8 +25,9 @@ public class WPStream {
 
         System.out.println(map);
 
+//        Stream
+//        Collectors
 
-
-//        .parallel()
+        //Reflection + Annotation
     }
 }

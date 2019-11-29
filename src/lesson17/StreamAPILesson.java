@@ -100,6 +100,26 @@ public class StreamAPILesson {
                         String::length, //
                         (item1, item2) -> item1)); //
 
+        List<String> stringList = Arrays.asList("34", "58", "78");
+        stringList.stream()
+                .flatMap(num -> Stream.of(Integer.parseInt(num)))
+                .forEach(System.out::println);
+        // reduce
+        Stream<Integer> integerStream1 = Stream.of(1, 2, 3, 4);
+        Optional<Integer> optional = integerStream1.reduce((x, y)->x+y);
+        System.out.println(optional.get()); // 10
+
+        Stream<String> stringStream = Stream.of("Java", "Junior");
+        String res = stringStream.reduce("Result: ", (x, y)->x+" "+y);
+        System.out.println(res);
+
+        integerStream1 = Stream.of(1, -2, -3, 4);
+        int result = integerStream1.reduce(0, (x, y)->{
+            if (x < 0 || y < 0) return 0;
+            else return x + y;
+        }, (x, y)->x+y);
+        System.out.println(result); // 4
+
     }
 }
 
