@@ -1,14 +1,15 @@
-package lesson17;
+package lesson17.tasks.task1;
 
 import java.util.List;
 
-public class Main {
+public class StudentTask {
     public static void main(String[] args) {
-        // найти студентов с уникальными предметами
+        //TODO: найти студентов с уникальными предметами. Задачу решать с использованием stream API
     }
 }
 
 class Student {
+    // можно добавить дополнительные поля
     private String login;
     private List<String> subjects;
 
