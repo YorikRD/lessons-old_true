@@ -231,4 +231,4 @@ enum с необходимыми константами нужно создат�
 Задания в папке Lesson17/tasks.
 1. В папке Lesson17/tasks/task1/StudentTask.java
 2. В папке Lesson17/tasks/task2/TransactionsTask.java
-
+3. В папке Lesson17/tasks/task3/PupilTask.java
