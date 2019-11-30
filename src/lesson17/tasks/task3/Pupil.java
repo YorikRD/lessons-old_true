@@ -1,11 +1,6 @@
 package lesson17.tasks.task3;
 
-
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
+import java.time.LocalDate;
 
 public class Pupil {
     enum Gender {
@@ -14,7 +9,7 @@ public class Pupil {
     private int number; // уникальное значение для каждого ученика
     private String name;
     private Gender gender;
-    private LocalDateTime birth;
+    private LocalDate birth;
 
     // TODO: добавить все необходимые методы
 
