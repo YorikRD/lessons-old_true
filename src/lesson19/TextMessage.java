@@ -31,6 +31,12 @@ class Message {
     public void printTitle(){
         System.out.println("Тема сообщения: " + this.title);
     }
+
+    public void printTitle(String data){
+        System.out.println("Тема сообщения: " + this.title);
+    }
+
+
 }
 
 public class TextMessage extends Message implements Serializable {
@@ -46,6 +52,10 @@ public class TextMessage extends Message implements Serializable {
         return "Тема сообщения: " + title + ".\n" +
                 "Текст сообщения: " + text + ".\n" +
                 "Отправлено: " + sent + ".\n";
+    }
+
+    public static void someVoid(){
+        System.out.println("some static Void");
     }
 }
 

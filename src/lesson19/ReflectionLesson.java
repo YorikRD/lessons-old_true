@@ -1,6 +1,8 @@
 package lesson19;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 
 public class ReflectionLesson {
@@ -36,8 +38,23 @@ public class ReflectionLesson {
         Field[] declaredFields = textMessageClass.getDeclaredFields();
         System.out.println(Arrays.toString(declaredFields));
 
+        // доступ к методам
+        // возвращает все публичные методы класса (включая родительские)
+        Method[] methods = textMessageClass.getMethods();
+        System.out.println(Arrays.toString(methods));
 
+        // возвращает все методы класса (включая private и protected)
+        Method[] declaredMethods = textMessageClass.getDeclaredMethods();
+        System.out.println(Arrays.toString(declaredMethods));
 
+        // доступ к конструкторам
+        Constructor[] declaredConstructors =
+                textMessageClass.getDeclaredConstructors();
+        System.out.println(Arrays.toString(declaredConstructors));
+
+        // доступ к конкретному полю / методу
+
+        Field field = textMessageClass.getDeclaredField("text");
 
     }
 }
