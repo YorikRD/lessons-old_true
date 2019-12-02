@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 class Message {
-    protected String title;
+    public String title;
     protected LocalDateTime sent;
 
     public Message(String title) {
