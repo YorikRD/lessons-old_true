@@ -12,7 +12,7 @@ public class ReflectionLesson {
     public static void main(String[] args) throws
             NoSuchFieldException,
             IllegalAccessException,
-            NoSuchMethodException, InvocationTargetException {
+            NoSuchMethodException, InvocationTargetException, InstantiationException {
 //        Reflection API класс Class
         System.out.println(String.class);
         System.out.println(int.class);
@@ -82,5 +82,21 @@ public class ReflectionLesson {
 //            System.out.println("Тема сообщения: " + data);
 //        }
 
+        Method printTitleMethod = textMessageClass
+//                .getSuperclass()
+                .getDeclaredMethod("printTitle", String.class);
+        printTitleMethod.invoke(textMessage, "printTitle method");
+
+        Constructor<TextMessage> tmConstructor =
+                textMessageClass.getDeclaredConstructor(String.class, String.class);
+        TextMessage message =
+                tmConstructor.newInstance("Reflect Message", "Obj created");
+        message.printTitle();
+
+        boolean isPrivate = Modifier.isPrivate(field.getModifiers());
+        System.out.println("is 'text' private " + isPrivate);
+
+
+        // написать рефлексивный static toString();
     }
 }
