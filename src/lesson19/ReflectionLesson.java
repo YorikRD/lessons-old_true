@@ -1,12 +1,18 @@
 package lesson19;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
+import java.lang.reflect.*;
 import java.util.Arrays;
 
 public class ReflectionLesson {
-    public static void main(String[] args) {
+    /*static {
+        if (System.getSecurityManager() == null) {
+            System.setSecurityManager(new SecurityManager());
+        }
+    }*/
+    public static void main(String[] args) throws
+            NoSuchFieldException,
+            IllegalAccessException,
+            NoSuchMethodException, InvocationTargetException {
 //        Reflection API класс Class
         System.out.println(String.class);
         System.out.println(int.class);
@@ -55,6 +61,26 @@ public class ReflectionLesson {
         // доступ к конкретному полю / методу
 
         Field field = textMessageClass.getDeclaredField("text");
+        System.out.println(field.getType());
+        field.setAccessible(true);
+        // возвращает значение поля для конкретного объекта,
+        // если позволяет модификатор доступа,
+        // в противном случае - IllegalAccessException
+        System.out.println(field.get(textMessage));
+        // устанавливает значение поля для конкретного объекта,
+        // если позволяет модификатор доступа,
+        // в противном случае - IllegalAccessException
+        field.set(textMessage, "Новое Сообщение");
+        System.out.println(field.get(textMessage));
+
+        Method method = textMessageClass.getDeclaredMethod("getMessageInfo");
+        method.setAccessible(true);
+        String messageResult = (String) method.invoke(textMessage);
+        System.out.println("getMessageInfo " + messageResult);
+
+//        public void printTitle(String data){
+//            System.out.println("Тема сообщения: " + data);
+//        }
 
     }
 }

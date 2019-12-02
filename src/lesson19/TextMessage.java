@@ -33,7 +33,7 @@ class Message {
     }
 
     public void printTitle(String data){
-        System.out.println("Тема сообщения: " + this.title);
+        System.out.println("Тема сообщения: " + data);
     }
 
 
