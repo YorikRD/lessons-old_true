@@ -1,5 +1,9 @@
 package lesson20.task;
 
+import lesson20.task.diContainer.InitClass;
+import lesson20.task.diContainer.InitProp;
+import lesson20.task.diContainer.RunMethod;
+
 @InitClass
 public class Server {
     @InitProp
@@ -10,6 +14,4 @@ public class Server {
         System.out.println("Server is running on..."
                 + settings.getIp() + " " + settings.getPort());
     }
-
-
 }

@@ -1,5 +1,7 @@
 package lesson20.task;
 
+import lesson20.task.diContainer.ConfigClass;
+
 @ConfigClass(prefix="server")
 public class ServerSettings {
     private String ip;
