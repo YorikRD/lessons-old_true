@@ -10,6 +10,7 @@ import java.io.InputStream;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -29,12 +30,32 @@ public class Container {
         loadProperties();
         createObjects();
         intProps();
-//        runVoids();
+        runVoids();
     }
 
-    private void intProps() {
+    private void runVoids() throws InvocationTargetException, IllegalAccessException {
         for (Map.Entry<Class, Object> entry: objects.entrySet()){
+            // Method[] methods = entry.getValue().getClass().getDeclaredMethods();
+            Method[] methods = entry.getKey().getDeclaredMethods();
+            for (Method method: methods){
+                if (method.isAnnotationPresent(RunMethod.class)){
+                    method.setAccessible(true);
+                    method.invoke(entry.getValue());
+                }
+            }
+        }
+    }
 
+    private void intProps() throws IllegalAccessException {
+        for (Map.Entry<Class, Object> entry: objects.entrySet()){
+            Field[] fields = entry.getValue().getClass().getDeclaredFields();
+            for (Field field: fields){
+                if (field.isAnnotationPresent(InitProp.class)){
+                    Object o = objects.get(field.getType());
+                    field.setAccessible(true);
+                    field.set(entry.getValue(), o);
+                }
+            }
         }
     }
 

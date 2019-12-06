@@ -12,6 +12,7 @@ public class Main {
         Set<Class> classes = new HashSet<>();
         classes.add(ServerSettings.class);
         classes.add(Server.class);
+        classes.add(SomeClass.class);
         Container container = new Container(classes);
         try {
             container.init();
