@@ -9,6 +9,20 @@ public class Robot {
 //    final static int NORM_PRIORITY = 5;
 //    final static int MAX_PRIORITY = 10;
 
+    // два потока должны по очереди выводить свое имя в консоль
+
+
+    // топ 100 слов параллельно.
+    // Количество потоков = Runtime.getRuntime().availableProcessors()
+    // Каждый поток собирает результат в свой map, затем добавляет в общий map.
+    // Поток, который создавал другие потоки должен ожидать их завершения и
+    // выводить результат в консоль
+
+    // the - 234
+    // the - 56
+
+
+
     volatile boolean currentLeg = true;
 
     class Leg implements Runnable{
