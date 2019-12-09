@@ -1,9 +1,14 @@
 package lesson20.task;
 
+import lesson20.task.diContainer.InitClass;
+import lesson20.task.diContainer.InitProp;
+import lesson20.task.diContainer.RunMethod;
+
 @InitClass
 public class Server {
     @InitProp
     private ServerSettings settings;
+
 
     @RunMethod
     public void start(){
@@ -11,5 +16,10 @@ public class Server {
                 + settings.getIp() + " " + settings.getPort());
     }
 
-
+    @Override
+    public String toString() {
+        return "Server{" +
+                "settings=" + settings +
+                '}';
+    }
 }
