@@ -36,7 +36,11 @@ public class CollectionLesson {
         studentArrayList.add(null);
         studentArrayList.trimToSize();
         System.out.println(studentArrayList);
-        System.out.println(studentArrayList.subList(0, 2));
+        studentArrayList.add(student3);
+        studentArrayList.add(student4);
+//        System.out.println("туту");
+        System.out.println(studentArrayList.subList(0, studentArrayList.size()));
+//        System.out.println("туту");
 
         // список из массива
         Student[] studentsArr = {student1, student2, student3};

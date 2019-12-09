@@ -31,7 +31,7 @@ public class Container {
                     e.printStackTrace();
                 }
             } else if (cls.isAnnotationPresent(InitClass.class)){
-                Field[] field = cls.getDeclaredFie;
+                Field[] field = cls.getDeclaredFields();
 
 
 

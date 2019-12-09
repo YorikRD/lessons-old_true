@@ -43,7 +43,6 @@ public class Tasks {
                 logins.add(entry.getKey());
             }
         }
-
         return logins;
     }
 

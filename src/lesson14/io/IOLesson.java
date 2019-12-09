@@ -27,9 +27,9 @@ public class IOLesson {
         System.out.println(file.lastModified());
         try {
 //            writeToFile(file, false);
-//            readByteArray(file);
+            readByteArray(file);
 //            writeWithBuffer(file);
-            writeReadData(file);
+//            writeReadData(file);
         } catch (IOException e) {
             e.printStackTrace();
         }
