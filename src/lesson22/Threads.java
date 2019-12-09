@@ -27,9 +27,9 @@ public class Threads {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                System.out.println("thread1 sync object 2");
+                System.out.println("thread2 sync object 2");
                 synchronized (object1) {
-                    System.out.println("thread1 sync object 1");
+                    System.out.println("thread2 sync object 1");
                 }
             }
         });
