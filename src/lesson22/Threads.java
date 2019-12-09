@@ -20,7 +20,7 @@ public class Threads {
             }
         });
         Thread thread2 = new Thread(()->{
-            System.out.println("thread1 run");
+            System.out.println("thread2 run");
             synchronized (object2) {
                 try {
                     Thread.sleep(600);
