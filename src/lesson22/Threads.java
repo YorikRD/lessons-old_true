@@ -14,6 +14,7 @@ public class Threads {
                     e.printStackTrace();
                 }
                 System.out.println("thread1 sync object 1");
+
                 synchronized (object2) {
                     System.out.println("thread1 sync object 2");
                 }
