@@ -14,8 +14,9 @@ class BookStorage {
         // увеличивает счетчик на 1
         System.out.println("putBook - начало выполнения");
         while (bookCount >= 5) {
-            wait();
+            notify();
             System.out.println("putBook в состоянии ожидания");
+            wait();
         }
         bookCount++;
         System.out.println("putBook - добавил 1 книгу, в хранилище " + bookCount);
@@ -25,8 +26,9 @@ class BookStorage {
         // уменьшает счетчик на 1
         System.out.println("getBook - начало выполнения");
         while (bookCount < 1){
-            wait();
+            notify();
             System.out.println("getBook в состоянии ожидания");
+            wait();
         }
         bookCount--;
         System.out.println("getBook - забрали 1 книгу, осталось " + bookCount);
