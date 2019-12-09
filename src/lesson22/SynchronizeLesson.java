@@ -26,7 +26,7 @@ public class SynchronizeLesson {
 class Counter {
     public int counter = 0;
 
-    public void increment(){
+    public synchronized void increment(){
         counter++;
     }
 }
@@ -39,6 +39,9 @@ class IncrementThread extends Thread {
     @Override
     public void run(){
         for (int i = 0; i < 1000; i++) {
+//            synchronized (counter) {
+//                counter.increment();
+//            }
             counter.increment();
         }
     }
