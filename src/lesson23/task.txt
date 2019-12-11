@@ -1,0 +1,17 @@
+Client:
+Socket
+main поток (формирование и отправка сообщений)
+reader поток (читает сообщения от сервера)
+
+Server:
+ServerSocket serverSocket = ...
+Socket clientSocket = serverSocket.accept()
+writer поток (отправка сообщений клиентам)
+reader потоки (читает сообщения от клиента) - на каждое соединение свой поток
+
+LinkedBlockingDeque<Message>
+
+Message
+отправитель
+текст сообщения
+дата и время
