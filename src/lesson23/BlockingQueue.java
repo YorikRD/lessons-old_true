@@ -4,6 +4,7 @@ import java.util.Random;
 import java.util.concurrent.*;
 
 public class BlockingQueue {
+
     public static void main(String[] args) {
 
 //        LinkedTransferQueue

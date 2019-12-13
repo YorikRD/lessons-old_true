@@ -16,5 +16,22 @@ public class Transaction implements Runnable{
         // TODO: перевод средств в количестве (money) с аккаунта (src) на аккаунт (dst)
         //  с какой проблемой можно столкнуться?
         //  как ее решить?
+
+        if (src.getId() < dst.getId()){
+            synchronized (src) {
+                synchronized (dst){
+
+                }
+            }
+        } else {
+            synchronized (dst) {
+                synchronized (src){
+
+                }
+            }
+        }
+
+
+
     }
 }
