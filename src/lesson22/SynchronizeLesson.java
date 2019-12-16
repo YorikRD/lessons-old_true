@@ -19,7 +19,7 @@ public class SynchronizeLesson {
                 e.printStackTrace();
             }
         }
-        System.out.println("counter = " + counter.counter);
+        System.out.println("counter value = " + counter.counter);
     }
 }
 

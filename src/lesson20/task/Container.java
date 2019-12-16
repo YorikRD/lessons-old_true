@@ -1,6 +1,8 @@
 package lesson20.task;
 
 import com.sun.org.apache.xml.internal.security.Init;
+import lesson20.task.diContainer.ConfigClass;
+import lesson20.task.diContainer.InitClass;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -47,8 +49,7 @@ public class Container {
         properties.load(new FileInputStream(
                 new File("resources/config.properties")));
     settings.setIp(properties.getProperty(inputString + ".ip"));
-        settings.setPort(
-                Integer.parseInt(properties.getProperty(inputString + ".port")));
+        settings.setPort((properties.getProperty(inputString + ".port")));
         return settings;
     }
 }
