@@ -1,4 +1,5 @@
 package lesson14.io.messages;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.Socket;
@@ -44,7 +45,10 @@ public class MessageClient {
 
 
     public static void main(String[] args) {
-        try (InputStream inputStream = MessageClient.class.getClassLoader().getResourceAsStream("resources/config.properties")){
+        System.out.println(new File("resources/config.properties").exists());
+
+        try (InputStream inputStream = MessageClient.class.getClassLoader().getResourceAsStream("/config.properties")){
+
 
             Properties properties = new Properties();
             properties.load(inputStream);
